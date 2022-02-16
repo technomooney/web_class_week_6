@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Canvas</title>
+    <style>
+        canvas {
+            border: 2px solid;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" height="500" width="500"></canvas>
+
+
+<script>
+    let canvas = document.querySelector("#canvas")
+    let context = canvas.getContext("2d")
+
+    context.fillRect(120,40,60,60)
+
+
+    context.beginPath()
+    context.moveTo(10,10)
+    context.lineTo(490,490)
+    context.lineWidth = 5
+    context.strokeStyle = "skyblue"
+    context.stroke()
+
+    context.beginPath()
+    context.strokeStyle = "green"
+    context.arc(200,300,30,0,6.3)
+    context.stroke()
+    context.font = "30px cursive"
+    context.fillStyle = "darkblue"
+    context.fillText("Hello World", 300, 50)
+
+
+</script>
+</body>
+</html>
