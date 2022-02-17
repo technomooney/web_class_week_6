@@ -17,10 +17,10 @@
     let context = canvas.getContext("2d")
 
     canvas.addEventListener("click", function () {
-        let xPos = Event.offsetX
-        let yPos = Event.offsetY
+        let xPos = event.offsetX
+        let yPos = event.offsetY
         context.fillStyle = "black"
-        context.fillRect(xPos,yPos, 10,10)
+        context.fillRect(xPos-5,yPos-5, 10,10)
     })
 
 </script>
