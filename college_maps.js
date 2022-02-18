@@ -13,12 +13,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Add some markers for Minneapolis College and Saint Paul College
 let mctcCoordinates = [44.9724, -93.2844]
 let mctcMarker = L.marker(mctcCoordinates)
-    .bindPopup('Minnepolis College<br><a href="https://minneapolis.edu">Website</a>')
+    .bindPopup('Minnepolis College<br><a href="https://minneapolis.edu" target="_blank" rel="noreferrer noopener">Website</a>')
     .addTo(map)
 
 let stPaulCoordinates = [44.94839, -93.1099]
 let stpMarker = L.marker(stPaulCoordinates)
-    .bindPopup('Saint Paul College<br><a href="https://saintpaul.edu">Website</a>')
+    .bindPopup('Saint Paul College<br><a href="https://saintpaul.edu" target="_blank" rel="noreferrer noopener">Website</a>')
     .addTo(map)
 
 
