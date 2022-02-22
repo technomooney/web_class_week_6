@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawing program</title>
+    <style>
+        canvas {
+            border: 5px black solid;
+        }
+    </style>
+</head>
+<body>
+<label for="color-picker">Color:</label>
+<input id="color-picker" type="color">
+
+<label for="brush-size">Brush Size</label>
+<input id="brush-size" type="range" min="1" max="400"><br>
+
+<label for="brush-type">Brush Shape</label>
+
+<select id="brush-type">
+    <option value="filledSquare">Filled Square</option>
+    <option value="filledCircle" selected >Filled Circle</option>
+    <option value="hollowSquare">Hollow Square</option>
+    <option value="hollowCircle" selected >Hollow Circle</option>
+
+</select> <br>
+
+<canvas id="canvas" width="800" height="600"></canvas>
+
+<script>
+    let canvas = document.querySelector("#canvas")
+    let context = canvas.getContext("2d")
+    let color = document.querySelector("#color-picker")
+    let mousedown= false
+    let brushSizeInput = document.querySelector("#brush-size")
+    let brushTypeInput = document.querySelector("#brush-type")
+
+    let drawFilledCircle = function () {
+        if (!mousedown) {return}
+        let xPos = event.offsetX
+        let yPos = event.offsetY
+        let brushSize = brushSizeInput.value
+        context.fillStyle = color.value
+        context.beginPath()
+        context.arc(xPos,yPos,brushSize,0,6.3)
+        // context.fillRect(xPos-5,yPos-5, 10,10)
+        context.fill()
+    }
+    let drawHollowCircle = function () {
+        if (!mousedown) {return}
+        let xPos = event.offsetX
+        let yPos = event.offsetY
+        let brushSize = brushSizeInput.value
+        context.strokeStyle = color.value
+        context.beginPath()
+        context.arc(xPos,yPos,brushSize,0,6.3)
+        // context.fillRect(xPos-5,yPos-5, 10,10)
+        context.stroke()
+    }
+
+
+    let drawFilledSquare = function () {
+        if (!mousedown) {return}
+        let xPos = event.offsetX
+        let yPos = event.offsetY
+        let brushSize = brushSizeInput.value
+        context.fillStyle = color.value
+        context.fillRect(xPos-(brushSize/2),yPos-(brushSize/2), brushSize,brushSize)
+    }
+
+
+    let drawHollowSquare = function () {
+        if (!mousedown) {return}
+        let xPos = event.offsetX
+        let yPos = event.offsetY
+        let brushSize = brushSizeInput.value
+        context.strokeStyle = color.value
+        context.strokeRect(xPos-(brushSize/2),yPos-(brushSize/2), brushSize,brushSize)
+    }
+
+
+
+    canvas.addEventListener("mousedown",function () {
+        mousedown = true
+        let brushType = brushTypeInput.value;
+        if (brushType === "filledCircle") {
+            drawFilledCircle()
+        } else if (brushType === "filledSquare") {
+            drawFilledSquare()
+        } else if (brushType === "hollowCircle") {
+            drawHollowCircle()
+        } else if (brushType === "hollowSquare") {
+            drawHollowSquare()
+        }
+
+    })
+    canvas.addEventListener("mouseup", function () {
+        mousedown = false
+    })
+    canvas.addEventListener("mousemove", function () {
+        let brushType = brushTypeInput.value;
+        if (brushType === "filledCircle") {
+            drawFilledCircle()
+        } else if (brushType === "filledSquare") {
+            drawFilledSquare()
+        } else if (brushType === "hollowCircle") {
+            drawHollowCircle()
+        } else if (brushType === "hollowSquare") {
+            drawHollowSquare()
+        }
+
+    })
+
+</script>
+</body>
+</html>
