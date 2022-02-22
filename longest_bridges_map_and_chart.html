@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Longest Bridges Map</title>
+    <!-- Leaflet script and CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <!-- Our stylesheet. Make sure the size of the map div is set before trying to draw the map.-->
+    <link rel="stylesheet" type="text/css" href="longest_bridge_map.css">
+    <!-- Our script, uses Leaflet to draw the maps and map components for this page  -->
+    <script async defer src="longest_bridges_map.js"></script>
+</head>
+<body>
+
+<h1>What are the longest bridges?</h1>
+<div id="college-map"></div>
+<br> <br>
+
+<!-- use VueJS to make this chart scrollable -->
+<!-- found i could do that here -->
+<!-- https://stackoverflow.com/questions/35854244/how-can-i-create-a-horizontal-scrolling-chart-js-line-chart-with-a-locked-y-axis -->
+
+<canvas id="bridge-chart">
+
+</canvas>
+
+</body>
+</html>
+
+
