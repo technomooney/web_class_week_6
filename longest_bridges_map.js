@@ -970,8 +970,8 @@ let bridgesJson = [
         ]
     }
 ]
-let centerPoint = [44.96, -93.2]  // Array of latitude and longitude
-let zoomLevel = 2  // 1 = whole world, 10 = large city, 20 = city blocks
+let centerPoint = [0,0]  // Array of latitude and longitude
+let zoomLevel = 3  // 1 = whole world, 10 = large city, 20 = city blocks
 
 // Create the map
 let map = L.map('college-map').setView(centerPoint, zoomLevel)

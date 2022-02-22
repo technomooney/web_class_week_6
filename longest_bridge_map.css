@@ -2,6 +2,7 @@
     width: 1280px;
     height: 720px;
     border: 1px gray solid;  }
+
 img.to-be-colored {
     /* found the way to do this here https://stackoverflow.com/questions/43938860/how-to-tint-image-with-css　*/
     filter: brightness(120%) hue-rotate(-100deg) saturate(120%);
@@ -10,4 +11,7 @@ img.to-be-colored {
     width: 1280px;
     height: 720px;
     border: 1px gray solid;
+}
+.apply-margin {
+    margin: 25px 50px;
 }
